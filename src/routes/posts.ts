@@ -1,5 +1,6 @@
 import {Router, Request, Response } from "express";
-import { Post } from "../entities/Post";
+import  Post  from "../entities/Post";
+import Sub from "../entities/Sub";
 
 import auth from '../middleware/auth'
 
@@ -14,8 +15,9 @@ const createPost = async (req:Request,res:Response) => {
 
   try {
     //TODO find sub
+    const subRecord = await Sub.findOneOrFail({name:sub})
 
-    const post = new Post({title,body,user,subName:sub}) 
+    const post = new Post({title,body,user,sub:subRecord}) 
     await post.save()
     return res.json(post)
     
