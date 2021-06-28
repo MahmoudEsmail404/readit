@@ -11,6 +11,22 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,
-      "esModuleInterop":true
+      "esModuleInterop":true,
+      //S trict stuff
+      // "strict :true,
+      "noImplicitAny":true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+       //"strictPropertyInitialization": true
+       "noImplicitThis": true,
+       // Extra
+       "alwaysStrict": true,
+       "noUnusedLocals": true,
+       "noUnusedParameters": true,
+       "noUnusedParamters":true,
+       "noImplicitReturns": true,
+       "noFallthroughCasesInSwitch": true,
+       "resolveJsonModule": true
    }
 }
