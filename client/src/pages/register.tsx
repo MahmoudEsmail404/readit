@@ -10,7 +10,7 @@ export default function Register() {
         <title>Register</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-       <div className="w-40 h-screen bg-center bg-cover " style={{backgroundImage: "url('/images/bricks.jpg')"}}>
+       <div className="h-screen bg-center bg-cover w-36 " style={{backgroundImage: "url('/images/bricks.jpg')"}}>
         </div> 
         <div className="flex flex-col justify-center pl-6">
           <div className="w-70">
@@ -24,15 +24,15 @@ export default function Register() {
             </label>
           </div>
           <div className="mb-2">
-            <input type="email" className="w-full px-3 py-2 bg-gray-100 border border-gray-400 rounded" placeholder="Email"/>
+            <input type="email" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Email"/>
 
           </div>
           <div className="mb-2">
-            <input type="text" className="w-full px-3 py-2 bg-gray-100 border border-gray-400 rounded" placeholder="Username"/>
+            <input  type="text" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Username"/>
 
           </div>
           <div className="mb-2">
-            <input type="password" className="w-full px-3 py-2 bg-gray-100 border border-gray-400 rounded" placeholder="Password"/>
+            <input type="password" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Password"/>
 
           </div>
           <button className="w-full py-2 mb-4 text-xs font-bold text-white uppercase bg-blue-500 border border-blue-500 rounded ">Sign Up</button>
