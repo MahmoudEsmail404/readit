@@ -2,6 +2,8 @@ import {FormEvent, useState} from 'react'
 import Head from "next/head";
 import Link from "next/link";
 import Axios from 'axios'
+import classNames from 'classnames'
+import InputGroup from '../components/InputGroup';
 
 export default function Register() {
   const [email, setEmail] = useState('')
@@ -44,18 +46,9 @@ export default function Register() {
               I agree to get emails about cool stuff on Readit
             </label>
           </div>
-          <div className="mb-2">
-            <input value={email} onChange={e=>setEmail(e.target.value)}  type="email" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Email"/>
-
-          </div>
-          <div className="mb-2">
-            <input value={username} onChange={e=>setUsername(e.target.value)}  type="text" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Username"/>
-
-          </div>
-          <div className="mb-2">
-            <input value={password} onChange={e=>setPassword(e.target.value)} type="password" className="w-full p-3 transition duration-200 bg-gray-100 border border-gray-300 rounded outline-none focus:bg-white hover:bg-white" placeholder="Password"/>
-
-          </div>
+          <InputGroup className="mb-2" value={email} setValue={setEmail} placeholder="Email" error={errors.email} type="email"/>
+          <InputGroup className="mb-2" value={username} setValue={setUsername} placeholder="Username" error={errors.username} type="text"/>
+          <InputGroup className="mb-4" value={password} setValue={setPassword} placeholder="Password" error={errors.password} type="password"/>
           <button className="w-full py-2 mb-4 text-xs font-bold text-white uppercase bg-blue-500 border border-blue-500 rounded ">Sign Up</button>
           </form>
           <small>
