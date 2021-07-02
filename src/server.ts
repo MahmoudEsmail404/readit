@@ -4,6 +4,8 @@ import express from 'express'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
+
 dotenv.config()
 
 
@@ -20,6 +22,7 @@ app.use(express.json())
 app.use(morgan("dev"))
 app.use(trim)
 app.use(cookieParser())
+app.use(cors())
 
 app.get("/",(_,res)=>{
     res.send("hello world")
