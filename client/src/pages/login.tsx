@@ -34,7 +34,7 @@ export default function Login() {
     
   }
   return ( 
-    <div className="flex">
+    <div className="flex bg-white">
       <Head>
         <title>Login</title>
       </Head>
