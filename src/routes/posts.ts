@@ -93,6 +93,6 @@ const router = Router()
 router.post("/",auth,createPost)
 router.get("/",getPosts)
 router.get("/:identifier/:slug",getPost)
-router.get("/:identifier/:slug/comments",auth,commentOnPost)
+router.post("/:identifier/:slug/comments",auth,commentOnPost)
 
 export default router
