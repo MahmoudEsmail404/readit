@@ -5,6 +5,7 @@ import User from "./User";
 import { makeId, slugify } from "../util/helpers";
 import  Sub  from "./Sub";
 import Comment from "./Comment";
+import { Expose } from "class-transformer";
 
 @TOEntity("posts")
 export default class Post extends Entity {
@@ -32,6 +33,9 @@ export default class Post extends Entity {
     @Column()
     subName:string
 
+    @Column()
+    username:string
+
 
     @ManyToOne(()=>User,user=>user.posts)
     @JoinColumn({name:"username",referencedColumnName:"username"})
@@ -43,6 +47,16 @@ export default class Post extends Entity {
 
  @OneToMany(()=>Comment,comment=>comment.post)   
   comments:Comment[]
+
+@Expose() get url():string{
+  return `/r/${this.subName}/${this.identifier}/${this.slug}`
+}
+
+// protected url :string
+// @AfterLoad()
+// createdFields(){
+//   this.url = 
+// }
   
 @BeforeInsert()
 makeIdAndSlug(){
