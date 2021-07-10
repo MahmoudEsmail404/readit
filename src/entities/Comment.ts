@@ -1,9 +1,10 @@
-import {BeforeInsert, Column, Entity as TOEntity, Index, JoinColumn, ManyToOne} from 'typeorm'
+import {BeforeInsert, Column, Entity as TOEntity, Index, JoinColumn, ManyToOne, OneToMany} from 'typeorm'
 import { makeId } from '../util/helpers'
 
 import Entity from './Entity'
 import Post from './Post'
 import User from './User'
+import Vote from './Vote'
 
 
 @TOEntity("comments")
@@ -31,6 +32,9 @@ username:string
 
 @ManyToOne(()=>Post,post=>post.comments,{nullable:false})
   post : Post
+
+@OneToMany(()=>Vote,vote=>vote.comment)
+votes:Vote[]
 
   @BeforeInsert()
   makeIdAndSlug(){
